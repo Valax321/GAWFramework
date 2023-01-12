@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@GAME_DISPLAY_NAME@</title>
+        <style>
+            body
+            {
+                background-color: black;
+                margin: 0;
+            }
+
+            .canvas-container
+            {
+                width: 100%;
+                text-align: center;
+            }
+
+            canvas
+            {
+                display: inline;
+                border: 0px none;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvas-container">
+            <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1">
+            </canvas>
+        </div>
+        <script src="shell.js"></script>
+        <script src="@CMAKE_PROJECT_NAME@.js"></script>
+    </body>
+</html>

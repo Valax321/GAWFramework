@@ -1,0 +1,24 @@
+{
+  "name": "gawframework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "npx http-server build-web/bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valax321/GAWFramework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valax321/GAWFramework/issues"
+  },
+  "homepage": "https://github.com/Valax321/GAWFramework#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^4.9.4"
+  }
+}

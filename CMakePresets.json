@@ -8,18 +8,96 @@
     "configurePresets": [
         {
             "name": "web-base",
+            "hidden": true,
             "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-web",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "$env{EMSDK}/cmake/Modules/Platform/Emscripten.cmake"
+                "CMAKE_TOOLCHAIN_FILE": "$env{EMSDK}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
             }
         },
         {
             "name": "desktop-base",
+            "hidden": true,
             "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-desktop",
+            "toolset": {
+                "value": "host=x64",
+                "strategy": "external"
+            },
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
             "cacheVariables": {
-                "CC": "clang",
-                "CXX": "clang"
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl"
             }
+        },
+        {
+            "name": "web-debug",
+            "displayName": "Web (Debug)",
+            "inherits": "web-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "web-release",
+            "displayName": "Web (Release)",
+            "inherits": "web-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "desktop-debug",
+            "displayName": "Desktop (Debug)",
+            "inherits": "desktop-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "desktop-release",
+            "displayName": "Desktop (Release)",
+            "inherits": "desktop-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "web-base",
+            "hidden": true
+        },
+        {
+            "name": "desktop-base",
+            "hidden": true
+        },
+        {
+            "name": "web-debug",
+            "displayName": "Web (Debug)",
+            "inherits": "web-base",
+            "configurePreset": "web-debug"
+        },
+        {
+            "name": "web-release",
+            "displayName": "Web (Release)",
+            "inherits": "web-base",
+            "configurePreset": "web-release"
+        },
+        {
+            "name": "desktop-debug",
+            "displayName": "Desktop (Debug)",
+            "inherits": "desktop-base",
+            "configurePreset": "desktop-debug"
+        },
+        {
+            "name": "desktop-release",
+            "displayName": "Desktop (Releease)",
+            "inherits": "desktop-base",
+            "configurePreset": "desktop-release"
         }
     ]
 }
