@@ -17,6 +17,23 @@
                 text-align: center;
             }
 
+            .log-container
+            {
+                width: 100%;
+            }
+
+            .log
+            {
+                width: 1200px;
+                height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                overflow-y: scroll;
+                color: cornsilk;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 12pt;
+            }
+
             canvas
             {
                 display: inline;
@@ -29,6 +46,9 @@
         <div class="canvas-container">
             <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1">
             </canvas>
+        </div>
+        <div class="log-container">
+            <div id="log" class="log"></div>
         </div>
         <script src="shell.js"></script>
         <script src="@CMAKE_PROJECT_NAME@.js"></script>

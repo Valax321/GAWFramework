@@ -6,7 +6,7 @@
 typedef struct GameStateListNode
 {
     struct GameStateListNode* next;
-    GameState* state;
+    const GameState* state;
     void* ctx;
 } GameStateListNode;
 
@@ -118,6 +118,8 @@ void GameStateMachine_Push(GameStateMachine* stm, const GameState* state)
 
     GameStateListNode* newNode = SDL_malloc(sizeof(GameStateListNode));
     *newNode = (GameStateListNode){0};
+
+    newNode->state = state;
 
     if (pushQueue == NULL)
     {

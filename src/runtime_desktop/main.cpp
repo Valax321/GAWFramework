@@ -6,6 +6,12 @@
 #if defined(_WIN32) && defined(_DEBUG)
 #define LOG_TO_WINDBG
 
+extern "C" 
+{
+  __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
+  __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+}
+
 #define UNICODE
 #include <Windows.h>
 
