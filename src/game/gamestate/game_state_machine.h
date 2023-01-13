@@ -32,6 +32,7 @@ void GameStateMachine_Destroy(GameStateMachine* stm);
 
 const GameState* GameStateMachine_GetCurrent(GameStateMachine* stm);
 
+void GameStateMachine_UpdateQueuedStates(GameStateMachine* stm);
 void GameStateMachine_CallTick(GameStateMachine* stm);
 void GameStateMachine_CallFrame(GameStateMachine* stm);
 

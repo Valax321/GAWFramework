@@ -137,7 +137,10 @@ void Game_Update(void)
 void Game_Tick(void)
 {
     if (g_GameState.state)
+    {
+        GameStateMachine_UpdateQueuedStates(g_GameState.state);
         GameStateMachine_CallTick(g_GameState.state);
+    }
 }
 
 void Game_Render(void)

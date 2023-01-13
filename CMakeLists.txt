@@ -12,6 +12,8 @@ set(GAME_DISPLAY_NAME "Game-a-week")
 set(GAME_DEVELOPER "WHAT DO WE CALL OURSELVES")
 set(GAME_COPYRIGHT "Copyright blah blah blah")
 
+add_subdirectory(lib/vectorial)
+
 if (EMSCRIPTEN)
     include(ProjectEmscriptenConfig)
 else()
